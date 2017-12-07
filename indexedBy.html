@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var stooges = [{ name: 'moe', age: 40 }, { name: 'larry', age: 50 }, { name: 'curly', age: 60 }];
+
+        function indexedBy(arr, key) {
+            let newObj = {};
+            arr.forEach((item) => {
+                newObj[item[key]] = item;
+            });
+            return newObj;
+        }
+        console.log(indexedBy(stooges, 'age'));
+
+        
+    </script>
+</body>
+</html>

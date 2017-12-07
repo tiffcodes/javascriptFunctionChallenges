@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Unique Function</title>
+</head>
+<body>
+    <script>
+        let names = [
+            {
+                name: 'ryan',
+                age: 29
+            },
+            {
+                name: 'ryan',
+                age: 24
+            },
+            {
+                name: 'kristen',
+                age: 24
+            },
+            {
+                name: 'jenny',
+                age: 27
+            },
+            {
+                name: 'jenny',
+                age: 27
+            }
+        ]
+
+
+        function unique(arr, propertyToCheck) {
+            let uniqueList = [];
+            let exists = [];
+            let indexes = [];
+            arr.map((object, i) => {
+                if (exists.indexOf(object[propertyToCheck]) === -1) {
+                    exists.push(object[propertyToCheck]);
+                    indexes.push(i);
+                } 
+            });
+            indexes.map((uniqueIndex) => {
+                console.log(uniqueIndex);
+                uniqueList.push(arr[uniqueIndex]);
+            });
+            return uniqueList;
+        }
+
+        console.log(unique(names, 'name'));
+    </script>
+</body>
+</html>
